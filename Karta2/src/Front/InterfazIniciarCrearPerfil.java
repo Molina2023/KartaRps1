@@ -4,12 +4,13 @@
  */
 package Front;
 
+import java.awt.Color;
+
 /**
  *
  * @author nisit
  */
 public class InterfazIniciarCrearPerfil extends javax.swing.JFrame {
-
     /**
      * Creates new form Iniciar
      */
@@ -27,6 +28,12 @@ public class InterfazIniciarCrearPerfil extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
+        ovalo = new javax.swing.JLabel();
+        ChKa = new javax.swing.JLabel();
+        iniciarS = new javax.swing.JPanel();
+        iniciarBTN = new javax.swing.JLabel();
+        CrearPerfil = new javax.swing.JPanel();
+        crearBTN = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(144, 215, 155));
@@ -36,22 +43,99 @@ public class InterfazIniciarCrearPerfil extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(144, 215, 155));
         jPanel1.setForeground(new java.awt.Color(144, 215, 155));
         jPanel1.setPreferredSize(new java.awt.Dimension(825, 480));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 830, Short.MAX_VALUE)
+        ovalo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imgs/Ellipse 1.png"))); // NOI18N
+        jPanel1.add(ovalo, new org.netbeans.lib.awtextra.AbsoluteConstraints(342, 120, -1, -1));
+
+        ChKa.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imgs/Group 43.png"))); // NOI18N
+        jPanel1.add(ChKa, new org.netbeans.lib.awtextra.AbsoluteConstraints(669, 36, -1, -1));
+
+        iniciarS.setBackground(new java.awt.Color(255, 102, 255));
+        iniciarS.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        iniciarS.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        iniciarS.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                iniciarSMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                iniciarSMouseEntered(evt);
+            }
+        });
+
+        iniciarBTN.setFont(new java.awt.Font("Arial", 2, 12)); // NOI18N
+        iniciarBTN.setText("Iniciar Secion");
+        iniciarBTN.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+
+        javax.swing.GroupLayout iniciarSLayout = new javax.swing.GroupLayout(iniciarS);
+        iniciarS.setLayout(iniciarSLayout);
+        iniciarSLayout.setHorizontalGroup(
+            iniciarSLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(iniciarSLayout.createSequentialGroup()
+                .addGap(51, 51, 51)
+                .addComponent(iniciarBTN)
+                .addContainerGap(54, Short.MAX_VALUE))
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 480, Short.MAX_VALUE)
+        iniciarSLayout.setVerticalGroup(
+            iniciarSLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, iniciarSLayout.createSequentialGroup()
+                .addGap(0, 4, Short.MAX_VALUE)
+                .addComponent(iniciarBTN))
         );
+
+        jPanel1.add(iniciarS, new org.netbeans.lib.awtextra.AbsoluteConstraints(327, 321, -1, -1));
+
+        CrearPerfil.setBackground(new java.awt.Color(255, 255, 102));
+        CrearPerfil.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        CrearPerfil.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        CrearPerfil.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                CrearPerfilMouseClicked(evt);
+            }
+        });
+
+        crearBTN.setFont(new java.awt.Font("Arial", 2, 12)); // NOI18N
+        crearBTN.setText("Crear perfil");
+        crearBTN.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+
+        javax.swing.GroupLayout CrearPerfilLayout = new javax.swing.GroupLayout(CrearPerfil);
+        CrearPerfil.setLayout(CrearPerfilLayout);
+        CrearPerfilLayout.setHorizontalGroup(
+            CrearPerfilLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(CrearPerfilLayout.createSequentialGroup()
+                .addGap(59, 59, 59)
+                .addComponent(crearBTN)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        CrearPerfilLayout.setVerticalGroup(
+            CrearPerfilLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, CrearPerfilLayout.createSequentialGroup()
+                .addGap(0, 4, Short.MAX_VALUE)
+                .addComponent(crearBTN))
+        );
+
+        jPanel1.add(CrearPerfil, new org.netbeans.lib.awtextra.AbsoluteConstraints(327, 353, 182, -1));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 830, 480));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void iniciarSMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_iniciarSMouseEntered
+
+    }//GEN-LAST:event_iniciarSMouseEntered
+
+    private void iniciarSMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_iniciarSMouseClicked
+        IniciarSecion obj= new IniciarSecion();
+        obj.setVisible(true);
+        this.hide();
+    }//GEN-LAST:event_iniciarSMouseClicked
+
+    private void CrearPerfilMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CrearPerfilMouseClicked
+        CrearCuenta obj= new CrearCuenta();
+        obj.setVisible(true);
+        this.hide();
+    }//GEN-LAST:event_CrearPerfilMouseClicked
 
     /**
      * @param args the command line arguments
@@ -80,6 +164,8 @@ public class InterfazIniciarCrearPerfil extends javax.swing.JFrame {
         }
         //</editor-fold>
         //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -90,6 +176,12 @@ public class InterfazIniciarCrearPerfil extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel ChKa;
+    private javax.swing.JPanel CrearPerfil;
+    private javax.swing.JLabel crearBTN;
+    private javax.swing.JLabel iniciarBTN;
+    private javax.swing.JPanel iniciarS;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JLabel ovalo;
     // End of variables declaration//GEN-END:variables
 }
