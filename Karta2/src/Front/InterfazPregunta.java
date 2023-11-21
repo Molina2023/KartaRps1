@@ -10,9 +10,7 @@ package Front;
  */
 public class InterfazPregunta extends javax.swing.JFrame {
 
-    /**
-     * Creates new form Iniciar
-     */
+    int xMouse, yMouse;
     public InterfazPregunta() {
         initComponents();
     }
@@ -26,27 +24,156 @@ public class InterfazPregunta extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
+        pnlBtnExit = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
+        pnlBarra = new javax.swing.JPanel();
+        jPanel1 = new javax.swing.JPanel();
+        lblBtnMedio = new javax.swing.JLabel();
+        lblNumPrg = new javax.swing.JLabel();
+        lblRec2 = new javax.swing.JLabel();
+        lblPregunta = new javax.swing.JLabel();
+        jTextField1 = new javax.swing.JTextField();
+        lblUseThis = new javax.swing.JLabel();
+        lblSuper = new javax.swing.JLabel();
+        lblRec1 = new javax.swing.JLabel();
+        lblBtnMenu = new javax.swing.JLabel();
+        lblRecPrg = new javax.swing.JLabel();
+        lblLine = new javax.swing.JLabel();
+        lblRecRes = new javax.swing.JLabel();
+        lblBtnCheck = new javax.swing.JLabel();
+        lblBtnDificil = new javax.swing.JLabel();
+        lblBtnFacil = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(144, 215, 155));
-        setPreferredSize(new java.awt.Dimension(830, 460));
+        setLocationByPlatform(true);
+        setUndecorated(true);
+        setPreferredSize(new java.awt.Dimension(825, 480));
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        pnlBtnExit.setBackground(new java.awt.Color(144, 215, 155));
+        pnlBtnExit.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                pnlBtnExitMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                pnlBtnExitMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                pnlBtnExitMouseExited(evt);
+            }
+        });
+        pnlBtnExit.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel1.setText("X");
+        pnlBtnExit.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(9, 5, -1, -1));
+
+        getContentPane().add(pnlBtnExit, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 30, 30));
+
+        pnlBarra.setBackground(new java.awt.Color(144, 215, 155));
+        pnlBarra.setOpaque(false);
+        pnlBarra.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseDragged(java.awt.event.MouseEvent evt) {
+                pnlBarraMouseDragged(evt);
+            }
+        });
+        pnlBarra.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                pnlBarraMousePressed(evt);
+            }
+        });
+        getContentPane().add(pnlBarra, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 830, 25));
 
         jPanel1.setBackground(new java.awt.Color(144, 215, 155));
         jPanel1.setForeground(new java.awt.Color(144, 215, 155));
         jPanel1.setPreferredSize(new java.awt.Dimension(825, 480));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/btnImgMedio.png"))); // NOI18N
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(669, 304, -1, -1));
+        lblBtnMedio.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/btnImgMedio.png"))); // NOI18N
+        lblBtnMedio.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jPanel1.add(lblBtnMedio, new org.netbeans.lib.awtextra.AbsoluteConstraints(669, 304, -1, -1));
+        jPanel1.add(lblNumPrg, new org.netbeans.lib.awtextra.AbsoluteConstraints(103, 76, 218, 31));
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 830, 480));
+        lblRec2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/btnIngRec2.png"))); // NOI18N
+        jPanel1.add(lblRec2, new org.netbeans.lib.awtextra.AbsoluteConstraints(93, 72, -1, -1));
+        jPanel1.add(lblPregunta, new org.netbeans.lib.awtextra.AbsoluteConstraints(401, 138, -1, 26));
+
+        jTextField1.setBackground(new java.awt.Color(217, 217, 217));
+        jTextField1.setBorder(null);
+        jPanel1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 183, 190, 20));
+
+        lblUseThis.setFont(new java.awt.Font("Segoe UI", 1, 128)); // NOI18N
+        lblUseThis.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblUseThis.setText("H");
+        jPanel1.add(lblUseThis, new org.netbeans.lib.awtextra.AbsoluteConstraints(146, 175, 132, 111));
+
+        lblSuper.setFont(new java.awt.Font("Segoe UI", 1, 40)); // NOI18N
+        lblSuper.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblSuper.setText("1");
+        jPanel1.add(lblSuper, new org.netbeans.lib.awtextra.AbsoluteConstraints(257, 151, -1, -1));
+
+        lblRec1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/btnImgRec1.png"))); // NOI18N
+        jPanel1.add(lblRec1, new org.netbeans.lib.awtextra.AbsoluteConstraints(93, 72, -1, -1));
+
+        lblBtnMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/btnImgMenu.png"))); // NOI18N
+        lblBtnMenu.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jPanel1.add(lblBtnMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(747, 27, -1, -1));
+
+        lblRecPrg.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/btnImgPregunta.png"))); // NOI18N
+        jPanel1.add(lblRecPrg, new org.netbeans.lib.awtextra.AbsoluteConstraints(388, 136, -1, -1));
+
+        lblLine.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Line 1.png"))); // NOI18N
+        jPanel1.add(lblLine, new org.netbeans.lib.awtextra.AbsoluteConstraints(402, 204, -1, -1));
+
+        lblRecRes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/btnImgRecRes.png"))); // NOI18N
+        jPanel1.add(lblRecRes, new org.netbeans.lib.awtextra.AbsoluteConstraints(388, 175, -1, -1));
+
+        lblBtnCheck.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/btnImgCheck.png"))); // NOI18N
+        lblBtnCheck.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jPanel1.add(lblBtnCheck, new org.netbeans.lib.awtextra.AbsoluteConstraints(606, 181, -1, -1));
+
+        lblBtnDificil.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/btnImgDificil.png"))); // NOI18N
+        lblBtnDificil.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jPanel1.add(lblBtnDificil, new org.netbeans.lib.awtextra.AbsoluteConstraints(668, 255, -1, -1));
+
+        lblBtnFacil.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/btnImgFacil.png"))); // NOI18N
+        lblBtnFacil.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jPanel1.add(lblBtnFacil, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 357, -1, -1));
+
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 840, 480));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void pnlBarraMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnlBarraMousePressed
+       xMouse = evt.getX();
+       yMouse = evt.getY();
+        // TODO add your handling code here:
+    }//GEN-LAST:event_pnlBarraMousePressed
+
+    private void pnlBarraMouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnlBarraMouseDragged
+        int x = evt.getXOnScreen();
+        int y = evt.getYOnScreen();
+        this.setLocation(x - xMouse, y - yMouse);
+        // TODO add your handling code here:
+    }//GEN-LAST:event_pnlBarraMouseDragged
+
+    private void pnlBtnExitMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnlBtnExitMouseClicked
+        System.exit(0);
+        // TODO add your handling code here:
+    }//GEN-LAST:event_pnlBtnExitMouseClicked
+
+    private void pnlBtnExitMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnlBtnExitMouseEntered
+        pnlBtnExit.setBackground(new java.awt.Color(215,144,144));
+        // TODO add your handling code here:
+    }//GEN-LAST:event_pnlBtnExitMouseEntered
+
+    private void pnlBtnExitMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnlBtnExitMouseExited
+        pnlBtnExit.setBackground(new java.awt.Color(144,215,155));
+        // TODO add your handling code here:
+    }//GEN-LAST:event_pnlBtnExitMouseExited
 
     /**
      * @param args the command line arguments
@@ -87,5 +214,22 @@ public class InterfazPregunta extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JTextField jTextField1;
+    private javax.swing.JLabel lblBtnCheck;
+    private javax.swing.JLabel lblBtnDificil;
+    private javax.swing.JLabel lblBtnFacil;
+    private javax.swing.JLabel lblBtnMedio;
+    private javax.swing.JLabel lblBtnMenu;
+    private javax.swing.JLabel lblLine;
+    private javax.swing.JLabel lblNumPrg;
+    private javax.swing.JLabel lblPregunta;
+    private javax.swing.JLabel lblRec1;
+    private javax.swing.JLabel lblRec2;
+    private javax.swing.JLabel lblRecPrg;
+    private javax.swing.JLabel lblRecRes;
+    private javax.swing.JLabel lblSuper;
+    private javax.swing.JLabel lblUseThis;
+    private javax.swing.JPanel pnlBarra;
+    private javax.swing.JPanel pnlBtnExit;
     // End of variables declaration//GEN-END:variables
 }
