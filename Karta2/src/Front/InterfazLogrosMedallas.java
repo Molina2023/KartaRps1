@@ -14,14 +14,11 @@ import javax.swing.JTextField;
 public class InterfazLogrosMedallas extends javax.swing.JFrame {
     String nombre,passw;
     String datos="";
-    
-    void guardarUsuario(String nombre, String passw){
-        
-    }
     /**
      * Creates new form Iniciar
      */
-    public InterfazLogrosMedallas(String nombre, String passw) {
+    public InterfazLogrosMedallas() {
+        
         initComponents();
         
     }
@@ -51,7 +48,7 @@ public class InterfazLogrosMedallas extends javax.swing.JFrame {
         broncetxt = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        NOMUS = new javax.swing.JTextField();
+        NOMBRE = new javax.swing.JLabel();
 
         jLabel6.setText("jLabel6");
 
@@ -145,12 +142,8 @@ public class InterfazLogrosMedallas extends javax.swing.JFrame {
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imgs/Group 36.png"))); // NOI18N
         jLabel2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
-        NOMUS.setText(nombre);
-        NOMUS.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                NOMUSActionPerformed(evt);
-            }
-        });
+        NOMBRE.setFont(new java.awt.Font("Segoe UI", 2, 12)); // NOI18N
+        NOMBRE.setText("NOMBRE");
 
         javax.swing.GroupLayout PanelgLayout = new javax.swing.GroupLayout(Panelg);
         Panelg.setLayout(PanelgLayout);
@@ -173,11 +166,11 @@ public class InterfazLogrosMedallas extends javax.swing.JFrame {
                         .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(14, 14, 14))
                     .addGroup(PanelgLayout.createSequentialGroup()
-                        .addGap(25, 25, 25)
-                        .addComponent(NOMUS)
-                        .addGap(18, 18, 18)
+                        .addGap(56, 56, 56)
+                        .addComponent(NOMBRE)
+                        .addGap(63, 63, 63)
                         .addComponent(editPerfBtn)
-                        .addGap(129, 129, 129)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(PanelgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(oroBB)
                             .addComponent(bonceBB)
@@ -198,16 +191,7 @@ public class InterfazLogrosMedallas extends javax.swing.JFrame {
                     .addComponent(jLabel2))
                 .addGap(12, 12, 12)
                 .addGroup(PanelgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(PanelgLayout.createSequentialGroup()
-                        .addGroup(PanelgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(PanelgLayout.createSequentialGroup()
-                                .addGap(16, 16, 16)
-                                .addComponent(ftper))
-                            .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(PanelgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(editPerfBtn)
-                            .addComponent(NOMUS, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(PanelgLayout.createSequentialGroup()
                         .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(37, 37, 37)
@@ -218,37 +202,39 @@ public class InterfazLogrosMedallas extends javax.swing.JFrame {
                                 .addComponent(orotxt)))
                         .addGroup(PanelgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(PanelgLayout.createSequentialGroup()
-                                .addGap(18, 18, 18)
-                                .addComponent(plataBB))
-                            .addGroup(PanelgLayout.createSequentialGroup()
                                 .addGap(41, 41, 41)
-                                .addComponent(platatxt)))
+                                .addComponent(platatxt))
+                            .addGroup(PanelgLayout.createSequentialGroup()
+                                .addGap(18, 18, 18)
+                                .addGroup(PanelgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(editPerfBtn)
+                                    .addComponent(plataBB))))
                         .addGroup(PanelgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(PanelgLayout.createSequentialGroup()
                                 .addGap(18, 18, 18)
                                 .addComponent(bonceBB))
                             .addGroup(PanelgLayout.createSequentialGroup()
                                 .addGap(38, 38, 38)
-                                .addComponent(broncetxt)))))
+                                .addComponent(broncetxt))))
+                    .addGroup(PanelgLayout.createSequentialGroup()
+                        .addGap(16, 16, 16)
+                        .addComponent(ftper)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(NOMBRE)))
                 .addContainerGap(54, Short.MAX_VALUE))
         );
 
-        getContentPane().add(Panelg, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 830, 480));
+        getContentPane().add(Panelg, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 830, 480));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
-        NOMUS.setText(datos);
         
         InterfazIniciarCrearPerfil obj= new InterfazIniciarCrearPerfil();
         obj.setVisible(true);
         this.hide();
     }//GEN-LAST:event_jLabel1MouseClicked
-
-    private void NOMUSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NOMUSActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_NOMUSActionPerformed
 
     /**
      * @param args the command line arguments
@@ -287,12 +273,13 @@ public class InterfazLogrosMedallas extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
+                new InterfazLogrosMedallas().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField NOMUS;
+    private javax.swing.JLabel NOMBRE;
     private javax.swing.JPanel Panelg;
     private javax.swing.JLabel bonceBB;
     private javax.swing.JLabel broncetxt;
