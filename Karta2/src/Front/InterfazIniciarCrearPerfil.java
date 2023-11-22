@@ -64,7 +64,7 @@ public class InterfazIniciarCrearPerfil extends javax.swing.JFrame {
         });
 
         iniciarBTN.setFont(new java.awt.Font("Arial", 2, 12)); // NOI18N
-        iniciarBTN.setText("Iniciar Secion");
+        iniciarBTN.setText("Iniciar Sesión");
         iniciarBTN.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
 
         javax.swing.GroupLayout iniciarSLayout = new javax.swing.GroupLayout(iniciarS);
@@ -128,13 +128,13 @@ public class InterfazIniciarCrearPerfil extends javax.swing.JFrame {
     private void iniciarSMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_iniciarSMouseClicked
         IniciarSecion obj= new IniciarSecion();
         obj.setVisible(true);
-        this.hide();
+        this.setVisible(false);
     }//GEN-LAST:event_iniciarSMouseClicked
 
     private void CrearPerfilMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CrearPerfilMouseClicked
         CrearCuenta obj= new CrearCuenta();
         obj.setVisible(true);
-        this.hide();
+        this.setVisible(false);
     }//GEN-LAST:event_CrearPerfilMouseClicked
 
     /**

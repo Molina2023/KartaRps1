@@ -4,6 +4,9 @@
  */
 package Front;
 
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
+
 /**
  *
  * @author nisit
@@ -27,7 +30,9 @@ public class InterfazPregunta extends javax.swing.JFrame {
         pnlBtnExit = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         pnlBarra = new javax.swing.JPanel();
+        miniMenuPnl1 = new Front.MiniMenuPnl();
         jPanel1 = new javax.swing.JPanel();
+        lblResCheck = new javax.swing.JLabel();
         lblBtnMedio = new javax.swing.JLabel();
         lblNumPrg = new javax.swing.JLabel();
         lblRec2 = new javax.swing.JLabel();
@@ -85,15 +90,31 @@ public class InterfazPregunta extends javax.swing.JFrame {
             }
         });
         getContentPane().add(pnlBarra, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 830, 25));
+        getContentPane().add(miniMenuPnl1, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 40, -1, -1));
+        miniMenuPnl1.setVisible(false);
 
         jPanel1.setBackground(new java.awt.Color(144, 215, 155));
         jPanel1.setForeground(new java.awt.Color(144, 215, 155));
         jPanel1.setPreferredSize(new java.awt.Dimension(825, 480));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        lblResCheck.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        lblResCheck.setText("Esto es lo que dirán la respuesta");
+        jPanel1.add(lblResCheck, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 230, 218, 31));
+        lblResCheck.setVisible(false);
+
         lblBtnMedio.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/btnImgMedio.png"))); // NOI18N
         lblBtnMedio.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblBtnMedio.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                lblBtnMedioMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                lblBtnMedioMouseExited(evt);
+            }
+        });
         jPanel1.add(lblBtnMedio, new org.netbeans.lib.awtextra.AbsoluteConstraints(669, 304, -1, -1));
+        lblBtnMedio.setVisible(false);
         jPanel1.add(lblNumPrg, new org.netbeans.lib.awtextra.AbsoluteConstraints(103, 76, 218, 31));
 
         lblRec2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/btnIngRec2.png"))); // NOI18N
@@ -102,7 +123,23 @@ public class InterfazPregunta extends javax.swing.JFrame {
 
         jTextField1.setBackground(new java.awt.Color(217, 217, 217));
         jTextField1.setBorder(null);
+        jTextField1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jTextField1KeyTyped(evt);
+            }
+        });
         jPanel1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 183, 190, 20));
+        jTextField1.addKeyListener(new KeyAdapter() {
+            @Override
+            public void keyPressed(KeyEvent e) {
+                if(e.getKeyCode() == KeyEvent.VK_ENTER){
+                    lblResCheck.setVisible(true);
+                    lblBtnFacil.setVisible(true);
+                    lblBtnMedio.setVisible(true);
+                    lblBtnDificil.setVisible(true);
+                }
+            }
+        });
 
         lblUseThis.setFont(new java.awt.Font("Segoe UI", 1, 128)); // NOI18N
         lblUseThis.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -119,6 +156,11 @@ public class InterfazPregunta extends javax.swing.JFrame {
 
         lblBtnMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/btnImgMenu.png"))); // NOI18N
         lblBtnMenu.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblBtnMenu.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblBtnMenuMouseClicked(evt);
+            }
+        });
         jPanel1.add(lblBtnMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(747, 27, -1, -1));
 
         lblRecPrg.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/btnImgPregunta.png"))); // NOI18N
@@ -132,15 +174,38 @@ public class InterfazPregunta extends javax.swing.JFrame {
 
         lblBtnCheck.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/btnImgCheck.png"))); // NOI18N
         lblBtnCheck.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblBtnCheck.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblBtnCheckMouseClicked(evt);
+            }
+        });
         jPanel1.add(lblBtnCheck, new org.netbeans.lib.awtextra.AbsoluteConstraints(606, 181, -1, -1));
 
         lblBtnDificil.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/btnImgDificil.png"))); // NOI18N
         lblBtnDificil.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblBtnDificil.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                lblBtnDificilMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                lblBtnDificilMouseExited(evt);
+            }
+        });
         jPanel1.add(lblBtnDificil, new org.netbeans.lib.awtextra.AbsoluteConstraints(668, 255, -1, -1));
+        lblBtnDificil.setVisible(false);
 
         lblBtnFacil.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/btnImgFacil.png"))); // NOI18N
         lblBtnFacil.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblBtnFacil.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                lblBtnFacilMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                lblBtnFacilMouseExited(evt);
+            }
+        });
         jPanel1.add(lblBtnFacil, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 357, -1, -1));
+        lblBtnFacil.setVisible(false);
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 840, 480));
 
@@ -174,6 +239,66 @@ public class InterfazPregunta extends javax.swing.JFrame {
         pnlBtnExit.setBackground(new java.awt.Color(144,215,155));
         // TODO add your handling code here:
     }//GEN-LAST:event_pnlBtnExitMouseExited
+
+    private void lblBtnCheckMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblBtnCheckMouseClicked
+        InterfazResultados obj = new InterfazResultados();
+        obj.setVisible(true);
+        this.setVisible(false);
+        // cuando le den click a le flechita rosita los va a mandar a la siguiente pregunta o a InterfazResultados
+    }//GEN-LAST:event_lblBtnCheckMouseClicked
+
+    private void lblBtnDificilMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblBtnDificilMouseEntered
+        lblBtnDificil.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/btnImgDificil2.png")));
+        
+        // TODO add your handling code here:
+    }//GEN-LAST:event_lblBtnDificilMouseEntered
+
+    private void lblBtnDificilMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblBtnDificilMouseExited
+        lblBtnDificil.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/btnImgDificil.png")));
+        // TODO add your handling code here:
+    }//GEN-LAST:event_lblBtnDificilMouseExited
+
+    private void lblBtnMedioMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblBtnMedioMouseEntered
+        lblBtnMedio.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/btnImgMedio2.png")));
+        
+        // TODO add your handling code here:
+    }//GEN-LAST:event_lblBtnMedioMouseEntered
+
+    private void lblBtnMedioMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblBtnMedioMouseExited
+        lblBtnMedio.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/btnImgMedio.png")));
+        // TODO add your handling code here:
+    }//GEN-LAST:event_lblBtnMedioMouseExited
+
+    private void lblBtnFacilMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblBtnFacilMouseEntered
+        lblBtnFacil.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/btnImgFacil2.png")));
+        // TODO add your handling code here:
+    }//GEN-LAST:event_lblBtnFacilMouseEntered
+
+    private void lblBtnFacilMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblBtnFacilMouseExited
+        lblBtnFacil.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/btnImgFacil.png")));
+        // TODO add your handling code here:
+    }//GEN-LAST:event_lblBtnFacilMouseExited
+
+    private void lblBtnMenuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblBtnMenuMouseClicked
+        if (miniMenuPnl1.isVisible()) {
+            miniMenuPnl1.setVisible(false);
+        } else {
+            miniMenuPnl1.setVisible(true);
+        }
+        // TODO add your handling code here:
+    }//GEN-LAST:event_lblBtnMenuMouseClicked
+
+    private void jTextField1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField1KeyTyped
+        
+        if(evt.getKeyCode() == KeyEvent.VK_ENTER) {
+            lblResCheck.setVisible(true);
+            lblBtnFacil.setVisible(true);
+            lblBtnMedio.setVisible(true);
+            lblBtnDificil.setVisible(true);
+        }
+        
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField1KeyTyped
 
     /**
      * @param args the command line arguments
@@ -227,8 +352,10 @@ public class InterfazPregunta extends javax.swing.JFrame {
     private javax.swing.JLabel lblRec2;
     private javax.swing.JLabel lblRecPrg;
     private javax.swing.JLabel lblRecRes;
+    private javax.swing.JLabel lblResCheck;
     private javax.swing.JLabel lblSuper;
     private javax.swing.JLabel lblUseThis;
+    private Front.MiniMenuPnl miniMenuPnl1;
     private javax.swing.JPanel pnlBarra;
     private javax.swing.JPanel pnlBtnExit;
     // End of variables declaration//GEN-END:variables

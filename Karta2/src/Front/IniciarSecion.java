@@ -69,7 +69,7 @@ public class IniciarSecion extends javax.swing.JFrame {
         });
 
         iniSetxt.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
-        iniSetxt.setText("Iniciar Secion");
+        iniSetxt.setText("Iniciar Sesión");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -80,7 +80,7 @@ public class IniciarSecion extends javax.swing.JFrame {
                 .addComponent(ISbtnReg)
                 .addGap(29, 29, 29)
                 .addComponent(iniSetxt)
-                .addContainerGap(72, Short.MAX_VALUE))
+                .addContainerGap(109, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -136,7 +136,7 @@ public class IniciarSecion extends javax.swing.JFrame {
 
     private void ISbtnCtMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ISbtnCtMouseClicked
         
-        InterfazLogrosMedallas obj =new InterfazLogrosMedallas();
+        InterfazIniciar obj =new InterfazIniciar();
         obj.setVisible(true);
         this.hide();
     }//GEN-LAST:event_ISbtnCtMouseClicked

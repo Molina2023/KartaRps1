@@ -60,12 +60,15 @@ public class InterfazLogrosMedallas extends javax.swing.JFrame {
         Panelg.setBackground(new java.awt.Color(144, 215, 155));
         Panelg.setForeground(new java.awt.Color(144, 215, 155));
         Panelg.setPreferredSize(new java.awt.Dimension(825, 480));
+        Panelg.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         ftper.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imgs/Ellipse 1.png"))); // NOI18N
+        Panelg.add(ftper, new org.netbeans.lib.awtextra.AbsoluteConstraints(321, 111, -1, -1));
 
         editPerfBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imgs/Group 3.png"))); // NOI18N
         editPerfBtn.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
         editPerfBtn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        Panelg.add(editPerfBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(488, 260, -1, -1));
 
         jPanel3.setBackground(new java.awt.Color(255, 255, 153));
         jPanel3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -92,6 +95,8 @@ public class InterfazLogrosMedallas extends javax.swing.JFrame {
                 .addGap(22, 22, 22))
         );
 
+        Panelg.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(55, 95, -1, -1));
+
         jPanel4.setBackground(new java.awt.Color(255, 255, 153));
         jPanel4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel4.setPreferredSize(new java.awt.Dimension(164, 36));
@@ -117,114 +122,51 @@ public class InterfazLogrosMedallas extends javax.swing.JFrame {
                 .addGap(22, 22, 22))
         );
 
+        Panelg.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(615, 95, -1, -1));
+
         oroBB.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imgs/Group 24.png"))); // NOI18N
+        Panelg.add(oroBB, new org.netbeans.lib.awtextra.AbsoluteConstraints(631, 168, -1, -1));
 
         plataBB.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imgs/Group 23.png"))); // NOI18N
+        Panelg.add(plataBB, new org.netbeans.lib.awtextra.AbsoluteConstraints(631, 260, -1, -1));
 
         bonceBB.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imgs/Group 22.png"))); // NOI18N
+        Panelg.add(bonceBB, new org.netbeans.lib.awtextra.AbsoluteConstraints(631, 352, -1, -1));
 
         orotxt.setText("0");
+        Panelg.add(orotxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(756, 193, 37, -1));
 
         platatxt.setText("0");
+        Panelg.add(platatxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(756, 283, 37, -1));
 
         broncetxt.setText("0");
+        Panelg.add(broncetxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(756, 372, 37, -1));
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 3, 16)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(153, 0, 0));
-        jLabel1.setText("Cerrar Secion");
+        jLabel1.setText("Cerrar Sesión");
         jLabel1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel1MouseClicked(evt);
             }
         });
+        Panelg.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(697, 27, -1, -1));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imgs/Group 36.png"))); // NOI18N
         jLabel2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jLabel2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel2MouseClicked(evt);
+            }
+        });
+        Panelg.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(22, 27, -1, -1));
 
         NOMBRE.setFont(new java.awt.Font("Segoe UI", 2, 12)); // NOI18N
         NOMBRE.setText("NOMBRE");
+        Panelg.add(NOMBRE, new org.netbeans.lib.awtextra.AbsoluteConstraints(377, 275, -1, -1));
 
-        javax.swing.GroupLayout PanelgLayout = new javax.swing.GroupLayout(Panelg);
-        Panelg.setLayout(PanelgLayout);
-        PanelgLayout.setHorizontalGroup(
-            PanelgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelgLayout.createSequentialGroup()
-                .addGap(22, 22, 22)
-                .addComponent(jLabel2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel1)
-                .addGap(36, 36, 36))
-            .addGroup(PanelgLayout.createSequentialGroup()
-                .addGap(55, 55, 55)
-                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(102, 102, 102)
-                .addGroup(PanelgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(PanelgLayout.createSequentialGroup()
-                        .addComponent(ftper)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 144, Short.MAX_VALUE)
-                        .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(14, 14, 14))
-                    .addGroup(PanelgLayout.createSequentialGroup()
-                        .addGap(56, 56, 56)
-                        .addComponent(NOMBRE)
-                        .addGap(63, 63, 63)
-                        .addComponent(editPerfBtn)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(PanelgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(oroBB)
-                            .addComponent(bonceBB)
-                            .addComponent(plataBB))
-                        .addGap(65, 65, 65)
-                        .addGroup(PanelgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(platatxt, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(orotxt, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(broncetxt, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(37, 37, 37))
-        );
-        PanelgLayout.setVerticalGroup(
-            PanelgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(PanelgLayout.createSequentialGroup()
-                .addGap(27, 27, 27)
-                .addGroup(PanelgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1)
-                    .addComponent(jLabel2))
-                .addGap(12, 12, 12)
-                .addGroup(PanelgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(PanelgLayout.createSequentialGroup()
-                        .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(37, 37, 37)
-                        .addGroup(PanelgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(oroBB)
-                            .addGroup(PanelgLayout.createSequentialGroup()
-                                .addGap(25, 25, 25)
-                                .addComponent(orotxt)))
-                        .addGroup(PanelgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(PanelgLayout.createSequentialGroup()
-                                .addGap(41, 41, 41)
-                                .addComponent(platatxt))
-                            .addGroup(PanelgLayout.createSequentialGroup()
-                                .addGap(18, 18, 18)
-                                .addGroup(PanelgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(editPerfBtn)
-                                    .addComponent(plataBB))))
-                        .addGroup(PanelgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(PanelgLayout.createSequentialGroup()
-                                .addGap(18, 18, 18)
-                                .addComponent(bonceBB))
-                            .addGroup(PanelgLayout.createSequentialGroup()
-                                .addGap(38, 38, 38)
-                                .addComponent(broncetxt))))
-                    .addGroup(PanelgLayout.createSequentialGroup()
-                        .addGap(16, 16, 16)
-                        .addComponent(ftper)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(NOMBRE)))
-                .addContainerGap(54, Short.MAX_VALUE))
-        );
-
-        getContentPane().add(Panelg, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 830, 480));
+        getContentPane().add(Panelg, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 830, 480));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -235,6 +177,13 @@ public class InterfazLogrosMedallas extends javax.swing.JFrame {
         obj.setVisible(true);
         this.hide();
     }//GEN-LAST:event_jLabel1MouseClicked
+
+    private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
+        InterfazIniciar obj = new InterfazIniciar();
+        obj.setVisible(true);
+        this.setVisible(false);
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jLabel2MouseClicked
 
     /**
      * @param args the command line arguments

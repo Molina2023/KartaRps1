@@ -76,6 +76,12 @@ public class InterfazResultados extends javax.swing.JFrame {
         pnlPrincipal.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         lblBtnFlecha.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/ImgFlechaAtras.png"))); // NOI18N
+        lblBtnFlecha.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblBtnFlecha.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblBtnFlechaMouseClicked(evt);
+            }
+        });
         pnlPrincipal.add(lblBtnFlecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(42, 36, -1, -1));
 
         lblMedalla.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/ImgMedallaOro.png"))); // NOI18N
@@ -149,6 +155,13 @@ public class InterfazResultados extends javax.swing.JFrame {
         pnlBtnExit.setBackground(new java.awt.Color(144,215,155));
         // TODO add your handling code here:
     }//GEN-LAST:event_pnlBtnExitMouseExited
+
+    private void lblBtnFlechaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblBtnFlechaMouseClicked
+        InterfazIniciar obj = new InterfazIniciar();
+        obj.setVisible(true);
+        this.setVisible(false);
+        // TODO add your handling code here:
+    }//GEN-LAST:event_lblBtnFlechaMouseClicked
 
     /**
      * @param args the command line arguments

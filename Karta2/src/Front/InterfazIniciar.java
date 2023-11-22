@@ -27,6 +27,10 @@ public class InterfazIniciar extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
+        lblImgLogo2 = new javax.swing.JLabel();
+        miniMenuPnl1 = new Front.MiniMenuPnl();
+        lblBtnmenu = new javax.swing.JLabel();
+        lblBtnIniciar = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(144, 215, 155));
@@ -36,22 +40,65 @@ public class InterfazIniciar extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(144, 215, 155));
         jPanel1.setForeground(new java.awt.Color(144, 215, 155));
         jPanel1.setPreferredSize(new java.awt.Dimension(825, 480));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 830, Short.MAX_VALUE)
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 480, Short.MAX_VALUE)
-        );
+        lblImgLogo2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/imgLogo2.png"))); // NOI18N
+        jPanel1.add(lblImgLogo2, new org.netbeans.lib.awtextra.AbsoluteConstraints(222, 67, -1, -1));
+        jPanel1.add(miniMenuPnl1, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 40, -1, -1));
+        miniMenuPnl1.setVisible(false);
+
+        lblBtnmenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/btnImgMenu.png"))); // NOI18N
+        lblBtnmenu.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblBtnmenu.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblBtnmenuMouseClicked(evt);
+            }
+        });
+        jPanel1.add(lblBtnmenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(742, 16, -1, -1));
+
+        lblBtnIniciar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/btnImgIniciar.png"))); // NOI18N
+        lblBtnIniciar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblBtnIniciarMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                lblBtnIniciarMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                lblBtnIniciarMouseExited(evt);
+            }
+        });
+        jPanel1.add(lblBtnIniciar, new org.netbeans.lib.awtextra.AbsoluteConstraints(321, 323, -1, -1));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 830, 480));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void lblBtnIniciarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblBtnIniciarMouseEntered
+        lblBtnIniciar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/btnImgIniciar2.png")));
+        
+    }//GEN-LAST:event_lblBtnIniciarMouseEntered
+
+    private void lblBtnIniciarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblBtnIniciarMouseExited
+        lblBtnIniciar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/btnImgIniciar.png")));
+// TODO add your handling code here:
+    }//GEN-LAST:event_lblBtnIniciarMouseExited
+
+    private void lblBtnIniciarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblBtnIniciarMouseClicked
+        InterfazPregunta obj= new InterfazPregunta();
+        obj.setVisible(true);
+        this.setVisible(false);
+        // TODO add your handling code here:
+    }//GEN-LAST:event_lblBtnIniciarMouseClicked
+
+    private void lblBtnmenuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblBtnmenuMouseClicked
+        if (miniMenuPnl1.isVisible()) {
+            miniMenuPnl1.setVisible(false);
+        } else {
+            miniMenuPnl1.setVisible(true);
+        }
+    }//GEN-LAST:event_lblBtnmenuMouseClicked
 
     /**
      * @param args the command line arguments
@@ -91,5 +138,9 @@ public class InterfazIniciar extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JLabel lblBtnIniciar;
+    private javax.swing.JLabel lblBtnmenu;
+    private javax.swing.JLabel lblImgLogo2;
+    private Front.MiniMenuPnl miniMenuPnl1;
     // End of variables declaration//GEN-END:variables
 }

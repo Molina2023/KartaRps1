@@ -184,7 +184,7 @@ public class CrearCuenta extends javax.swing.JFrame {
         String nombre=nombreCCtxt.getText();
         String passw=passCCtxt.getText();
         
-        InterfazLogrosMedallas obj =new InterfazLogrosMedallas();
+        InterfazIniciar obj =new InterfazIniciar();
         obj.setVisible(true);
         this.hide();
     }//GEN-LAST:event_CCbtnCtMouseClicked

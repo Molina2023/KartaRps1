@@ -124,7 +124,7 @@
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Arial" size="12" style="2"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Iniciar Secion"/>
+                <Property name="text" type="java.lang.String" value="Iniciar Sesi&#xf3;n"/>
                 <Property name="verticalTextPosition" type="int" value="3"/>
               </Properties>
             </Component>
