@@ -27,6 +27,10 @@ public enum Grupo {
     VIA(16),
     VIIA(17),
     VIIIA(18);
+
+    public int getNum() {
+        return num;
+    }
     
     private Grupo (int num) {
         this.num = num;
