@@ -10,13 +10,13 @@ public class Elemento implements Serializable{
     int numA;
     String simbolo;
     String nombre;
-    Periodo periodo;
-    Grupo grupo;
+    Enum.Periodo periodo;
+    Enum.Grupo grupo;
     String clasificacion;
     double pesoA;
     double electronegatividad;
 
-    public Elemento(int numA, String simbolo, String nombre, Periodo periodo, Grupo grupo, String clasificacion, double PesoA, double electronegatividad) {
+    public Elemento(int numA, String simbolo, String nombre, Enum.Periodo periodo, Enum.Grupo grupo, String clasificacion, double pesoA, double electronegatividad) {
         this.numA = numA;
         this.simbolo = simbolo;
         this.nombre = nombre;
@@ -27,7 +27,38 @@ public class Elemento implements Serializable{
         this.electronegatividad = electronegatividad;
     }
 
-    
+    public int getNumA() {
+        return numA;
+    }
+
+    public String getSimbolo() {
+        return simbolo;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public String getClasificacion() {
+        return clasificacion;
+    }
+
+    public double getPesoA() {
+        return pesoA;
+    }
+
+    public double getElectronegatividad() {
+        return electronegatividad;
+    }
+
+    public Enum.Periodo getPeriodo() {
+        return periodo;
+    }
+
+    public Enum.Grupo getGrupo() {
+        return grupo;
+    }
+
     
     
 }
