@@ -16,17 +16,15 @@ public enum Grupo {
     VB(5),
     VIB(6),
     VIIB(7),
-    VIIIB_8(8),
-    VIIIB_9(9),
-    VIIIB_10(10),
-    IB(11),
-    IIB(12),
-    IIIA(13),
-    IVA(14),
-    VA(15),
-    VIA(16),
-    VIIA(17),
-    VIIIA(18);
+    VIIIB(8),
+    IB(9),
+    IIB(10),
+    IIIA(11),
+    IVA(12),
+    VA(13),
+    VIA(14),
+    VIIA(15),
+    VIIIA(16);
 
     public int getNum() {
         return num;
