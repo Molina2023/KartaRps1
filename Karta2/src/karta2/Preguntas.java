@@ -5,15 +5,15 @@
 package karta2;
 
 public class Preguntas {
-    Elemento ElementFind;
-    Pregunta QuestionType;
+    Elemento ElementoJugando;
+    Enum.Pregunta TipoPregunta;
 
     public Elemento getElementFind() {
-        return ElementFind;
+        return ElementoJugando;
     }
 
-    public Pregunta getQuestionType() {
-        return QuestionType;
+    public Enum.Pregunta getTipoPregunta() {
+        return TipoPregunta;
     }
     
     
