@@ -6,18 +6,24 @@ package Front;
 
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
+import java.util.ArrayList;
+import karta2.*;
 
-/**
- *
- * @author nisit
- */
 public class InterfazPregunta extends javax.swing.JFrame {
 
     int xMouse, yMouse;
+    ElementosObj obj = new ElementosObj();
+    static ArrayList<Preguntas> item = new ArrayList<Preguntas>();
+    public static boolean ResSi = false;
+    public static String ResUsuario;
+    public static Elemento elemento;
+    public static karta2.Enum.Pregunta TipoPregunta;
+    
     public InterfazPregunta() {
         initComponents();
     }
 
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -55,6 +61,11 @@ public class InterfazPregunta extends javax.swing.JFrame {
         setUndecorated(true);
         setPreferredSize(new java.awt.Dimension(825, 480));
         setResizable(false);
+        addComponentListener(new java.awt.event.ComponentAdapter() {
+            public void componentShown(java.awt.event.ComponentEvent evt) {
+                formComponentShown(evt);
+            }
+        });
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         pnlBtnExit.setBackground(new java.awt.Color(144, 215, 155));
@@ -96,6 +107,11 @@ public class InterfazPregunta extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(144, 215, 155));
         jPanel1.setForeground(new java.awt.Color(144, 215, 155));
         jPanel1.setPreferredSize(new java.awt.Dimension(825, 480));
+        jPanel1.addPropertyChangeListener(new java.beans.PropertyChangeListener() {
+            public void propertyChange(java.beans.PropertyChangeEvent evt) {
+                jPanel1PropertyChange(evt);
+            }
+        });
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         lblResCheck.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
@@ -119,7 +135,18 @@ public class InterfazPregunta extends javax.swing.JFrame {
 
         lblRec2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/btnIngRec2.png"))); // NOI18N
         jPanel1.add(lblRec2, new org.netbeans.lib.awtextra.AbsoluteConstraints(93, 72, -1, -1));
-        jPanel1.add(lblPregunta, new org.netbeans.lib.awtextra.AbsoluteConstraints(401, 138, -1, 26));
+
+        lblPregunta.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                lblPreguntaMouseEntered(evt);
+            }
+        });
+        lblPregunta.addComponentListener(new java.awt.event.ComponentAdapter() {
+            public void componentShown(java.awt.event.ComponentEvent evt) {
+                lblPreguntaComponentShown(evt);
+            }
+        });
+        jPanel1.add(lblPregunta, new org.netbeans.lib.awtextra.AbsoluteConstraints(401, 138, 360, 26));
 
         jTextField1.setBackground(new java.awt.Color(217, 217, 217));
         jTextField1.setBorder(null);
@@ -133,10 +160,13 @@ public class InterfazPregunta extends javax.swing.JFrame {
             @Override
             public void keyPressed(KeyEvent e) {
                 if(e.getKeyCode() == KeyEvent.VK_ENTER){
+                    ResUsuario = jTextField1.getText();
+                    lblResCheck.setText(karta2.ElementosObj.ComprobarRespuesta(elemento, ResUsuario, TipoPregunta));
                     lblResCheck.setVisible(true);
                     lblBtnFacil.setVisible(true);
                     lblBtnMedio.setVisible(true);
                     lblBtnDificil.setVisible(true);
+
                 }
             }
         });
@@ -210,6 +240,7 @@ public class InterfazPregunta extends javax.swing.JFrame {
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 840, 480));
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void pnlBarraMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnlBarraMousePressed
@@ -300,6 +331,25 @@ public class InterfazPregunta extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField1KeyTyped
 
+    private void jPanel1PropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_jPanel1PropertyChange
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jPanel1PropertyChange
+
+    private void formComponentShown(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_formComponentShown
+        item = obj.DeterminarPreguntaIniciar(10);
+        // TODO add your handling code here:
+    }//GEN-LAST:event_formComponentShown
+
+    private void lblPreguntaComponentShown(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_lblPreguntaComponentShown
+        lblPregunta.setText(item.get(0).getTipoPregunta().getOracion());
+        // TODO add your handling code here:
+    }//GEN-LAST:event_lblPreguntaComponentShown
+
+    private void lblPreguntaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblPreguntaMouseEntered
+        lblPregunta.setText(item.get(0).getTipoPregunta().getOracion());
+        // TODO add your handling code here:
+    }//GEN-LAST:event_lblPreguntaMouseEntered
+
     /**
      * @param args the command line arguments
      */
@@ -332,22 +382,33 @@ public class InterfazPregunta extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new InterfazPregunta().setVisible(true);
+                item = ElementosObj.DeterminarPreguntaIniciar(10);
+                for (int i = 0; i < item.size(); i++) {
+                    lblPregunta.setText(item.get(i).getTipoPregunta().getOracion());
+                    elemento = item.get(i).getElementoJugando();
+                    TipoPregunta = item.get(i).getTipoPregunta();
+                    System.out.println(item.get(i).getTipoPregunta());
+                    
+                }
+                
             }
         });
+        
+        
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField jTextField1;
+    public static javax.swing.JTextField jTextField1;
     private javax.swing.JLabel lblBtnCheck;
     private javax.swing.JLabel lblBtnDificil;
     private javax.swing.JLabel lblBtnFacil;
     private javax.swing.JLabel lblBtnMedio;
     private javax.swing.JLabel lblBtnMenu;
     private javax.swing.JLabel lblLine;
-    private javax.swing.JLabel lblNumPrg;
-    private javax.swing.JLabel lblPregunta;
+    public static javax.swing.JLabel lblNumPrg;
+    public static javax.swing.JLabel lblPregunta;
     private javax.swing.JLabel lblRec1;
     private javax.swing.JLabel lblRec2;
     private javax.swing.JLabel lblRecPrg;

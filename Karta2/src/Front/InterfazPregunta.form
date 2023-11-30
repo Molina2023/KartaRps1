@@ -15,8 +15,11 @@
   </Properties>
   <SyntheticProperties>
     <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
-    <SyntheticProperty name="generateCenter" type="boolean" value="false"/>
+    <SyntheticProperty name="generateCenter" type="boolean" value="true"/>
   </SyntheticProperties>
+  <Events>
+    <EventHandler event="componentShown" listener="java.awt.event.ComponentListener" parameters="java.awt.event.ComponentEvent" handler="formComponentShown"/>
+  </Events>
   <AuxValues>
     <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
     <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="false"/>
@@ -113,6 +116,9 @@
           <Dimension value="[825, 480]"/>
         </Property>
       </Properties>
+      <Events>
+        <EventHandler event="propertyChange" listener="java.beans.PropertyChangeListener" parameters="java.beans.PropertyChangeEvent" handler="jPanel1PropertyChange"/>
+      </Events>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
           <AbsoluteConstraints x="0" y="0" width="840" height="480"/>
@@ -162,6 +168,9 @@
           </Constraints>
         </Component>
         <Component class="javax.swing.JLabel" name="lblNumPrg">
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
+          </AuxValues>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
               <AbsoluteConstraints x="103" y="76" width="218" height="31"/>
@@ -181,9 +190,17 @@
           </Constraints>
         </Component>
         <Component class="javax.swing.JLabel" name="lblPregunta">
+          <Events>
+            <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lblPreguntaMouseEntered"/>
+            <EventHandler event="componentShown" listener="java.awt.event.ComponentListener" parameters="java.awt.event.ComponentEvent" handler="lblPreguntaComponentShown"/>
+          </Events>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new javax.swing.JLabel()"/>
+            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
+          </AuxValues>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="401" y="138" width="-1" height="26"/>
+              <AbsoluteConstraints x="401" y="138" width="360" height="26"/>
             </Constraint>
           </Constraints>
         </Component>
@@ -200,7 +217,8 @@
             <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="jTextField1KeyTyped"/>
           </Events>
           <AuxValues>
-            <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="jTextField1.addKeyListener(new KeyAdapter() {&#xa;    @Override&#xa;    public void keyPressed(KeyEvent e) {&#xa;        if(e.getKeyCode() == KeyEvent.VK_ENTER){&#xa;            lblResCheck.setVisible(true);&#xa;            lblBtnFacil.setVisible(true);&#xa;            lblBtnMedio.setVisible(true);&#xa;            lblBtnDificil.setVisible(true);&#xa;        }&#xa;    }&#xa;});"/>
+            <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="jTextField1.addKeyListener(new KeyAdapter() {&#xa;    @Override&#xa;    public void keyPressed(KeyEvent e) {&#xa;        if(e.getKeyCode() == KeyEvent.VK_ENTER){&#xa;            ResUsuario = jTextField1.getText();&#xa;            lblResCheck.setText(karta2.ElementosObj.ComprobarRespuesta(elemento, ResUsuario, TipoPregunta));&#xa;            lblResCheck.setVisible(true);&#xa;            lblBtnFacil.setVisible(true);&#xa;            lblBtnMedio.setVisible(true);&#xa;            lblBtnDificil.setVisible(true);&#xa;            &#xa;        }&#xa;    }&#xa;});"/>
+            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
           </AuxValues>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
