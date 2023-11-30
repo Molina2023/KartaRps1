@@ -66,6 +66,11 @@ public class InterfazIniciarCrearPerfil extends javax.swing.JFrame {
         iniciarBTN.setFont(new java.awt.Font("Arial", 2, 12)); // NOI18N
         iniciarBTN.setText("Iniciar Sesión");
         iniciarBTN.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        iniciarBTN.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                iniciarBTNMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout iniciarSLayout = new javax.swing.GroupLayout(iniciarS);
         iniciarS.setLayout(iniciarSLayout);
@@ -119,6 +124,7 @@ public class InterfazIniciarCrearPerfil extends javax.swing.JFrame {
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 830, 480));
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void iniciarSMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_iniciarSMouseEntered
@@ -128,14 +134,16 @@ public class InterfazIniciarCrearPerfil extends javax.swing.JFrame {
     private void iniciarSMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_iniciarSMouseClicked
         IniciarSecion obj= new IniciarSecion();
         obj.setVisible(true);
-        this.setVisible(false);
     }//GEN-LAST:event_iniciarSMouseClicked
 
     private void CrearPerfilMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CrearPerfilMouseClicked
         CrearCuenta obj= new CrearCuenta();
         obj.setVisible(true);
-        this.setVisible(false);
     }//GEN-LAST:event_CrearPerfilMouseClicked
+
+    private void iniciarBTNMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_iniciarBTNMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_iniciarBTNMouseClicked
 
     /**
      * @param args the command line arguments
