@@ -8,13 +8,14 @@ public class Preguntas {
     Elemento ElementoJugando;
     Enum.Pregunta TipoPregunta;
 
-    public Elemento getElementFind() {
+    public Elemento getElementoJugando() {
         return ElementoJugando;
     }
 
     public Enum.Pregunta getTipoPregunta() {
         return TipoPregunta;
     }
+    
     
     
 }
