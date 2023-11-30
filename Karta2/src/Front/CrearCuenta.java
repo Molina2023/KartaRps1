@@ -4,15 +4,15 @@
  */
 package Front;
 
-/**
- *
- * @author Isis
- */
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import karta2.ElementosObj;
+
 public class CrearCuenta extends javax.swing.JFrame {
     int mouseCx, mouseCy;
-    /**
-     * Creates new form CrearCuenta
-     */
+    ElementosObj method = new ElementosObj();
+    
     public CrearCuenta() {
         initComponents();
     }
@@ -156,6 +156,7 @@ public class CrearCuenta extends javax.swing.JFrame {
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 270, 275));
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void passCCtxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passCCtxtActionPerformed
@@ -182,11 +183,18 @@ public class CrearCuenta extends javax.swing.JFrame {
 
     private void CCbtnCtMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CCbtnCtMouseClicked
         String nombre=nombreCCtxt.getText();
-        String passw=passCCtxt.getText();
-        
+        String passw=passCCtxt.getPassword().toString();
+        /*
+        try {
+            method.GuardarUsuario(nombre, passw, 0, 0, 0, "");
+        } catch (IOException ex) {
+            Logger.getLogger(CrearCuenta.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        */
+        System.out.println();
         InterfazIniciar obj =new InterfazIniciar();
         obj.setVisible(true);
-        this.hide();
+        this.setVisible(false);
     }//GEN-LAST:event_CCbtnCtMouseClicked
 
     /**
