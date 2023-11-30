@@ -51,22 +51,26 @@ public class Enum {
     }
     
     public enum Pregunta {
-        POR_SIMBOLO(1),
-        POR_PERIODO(2),
-        POR_GRUPO(3),
-        POR_CLASIFICACION(4),
-        POR_PESOA(5),
-        POR_ELECTRO(6);
-
-        public int getNum() {
-            return num;
+        POR_ELEMENTO("¿Cuál es el nombre del elemento cuyo símbolo es este?"),
+        POR_SIMBOLO("¿Cuál es el simbolo de este elemento?"),
+        POR_NUM_MASA("¿Cuál es el número de masa de este elemento?"),
+        POR_NUM_ATOMICO("¿Cuál es el número atómico de este elemento?"),
+        POR_PERIODO("¿En qué periodo se encuentra este elemento?"),
+        POR_GRUPO_RO("¿En qué grupo del sistema estadounidense se encuentra este elemento?"),
+        POR_GRUPO_AR("¿En qué grupo, según la IUPAC, se encuentra este elemento?"),
+        POR_CLASIFICACION("¿Qué tipo de elemento es este?"),
+        POR_PESOA("¿Cuál es el peso atómico de este elemento?"),
+        POR_ELECTRO("¿Qué elemento es más electronegativo?");
+        
+        
+        public String getOracion() {
+            return oracion;
         }
-
-        private Pregunta (int num) {
-            this.num = num;
+        private Pregunta (String oracion) {
+            this.oracion = oracion;
         }
-
-        private int num;
+        
+        private String oracion;
     }
     
     public enum Medalla {
