@@ -4,11 +4,17 @@
  */
 package karta2;
 
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectOutputStream;
 import java.util.ArrayList;
+import java.util.Random;
 
 
 public class ElementosObj {
-    ArrayList<Elemento> arrayEle = new ArrayList<Elemento>();
+    static ArrayList<Elemento> arrayEle = new ArrayList<Elemento>();
+    static ArrayList<Usuario> arrayUsuarios = new ArrayList<Usuario>();
     
     
     public ElementosObj (){
@@ -133,9 +139,9 @@ public class ElementosObj {
     }
     
     
-    private Preguntas DeterminarElemento(){
+    public static Preguntas DeterminarElementoIniciar(){
         int numElemento = (int) (Math.random() * 118);
-        int tipoPregunta = (int) (Math.random() * 6);
+        int tipoPregunta = (int) (Math.random() * 4);
         System.out.println(tipoPregunta);
         Preguntas item = new Preguntas();
         item.ElementoJugando = arrayEle.get(numElemento);
@@ -143,20 +149,125 @@ public class ElementosObj {
         return item;
     }
     
-    public ArrayList<Preguntas> DeterminarPregunta (int numPreguntas) {
+    public static ArrayList<Preguntas> DeterminarPreguntaIniciar (int numPreguntas) {
         ArrayList<Preguntas> item = new ArrayList<Preguntas>();
         
         for (int i = 0; i < numPreguntas; i++) {
-            item.add(DeterminarElemento());
-            System.out.println(item.get(i).getElementFind());
-            System.out.println("Simbolo atomico: " + item.get(i).getElementFind().getSimbolo());
-            System.out.println("Numero atomico: " + item.get(i).getElementFind().getNumA());
-            System.out.println(item.get(i).getTipoPregunta());
+            item.add(DeterminarElementoIniciar());
+            System.out.println(item.get(i).getElementoJugando());
+            System.out.println("Simbolo atomico: " + item.get(i).getElementoJugando().getSimbolo());
+            System.out.println("Numero atomico: " + item.get(i).getElementoJugando().getNumA());
+            System.out.println(item.get(i).getTipoPregunta().getOracion());
         }
         return item;
     }
     
-    public void Evaluacion(Ronda ronda) {
+    public static Preguntas DeterminarPreguntaMenu(int elemento, int simbolo, int grupo, int periodo, int clasificacion) {
+        Preguntas item = new Preguntas();
+        int numElemento = (int) (Math.random() * 118);
+        item.ElementoJugando = arrayEle.get(numElemento);
+        
+        ArrayList<Enum.Pregunta> arrayx = new ArrayList<Enum.Pregunta>();
+        if (elemento == 1) {
+            arrayx.add(Enum.Pregunta.POR_ELEMENTO);
+        }
+        if (simbolo == 1) {
+            arrayx.add(Enum.Pregunta.POR_SIMBOLO);
+        }
+        if (grupo == 1) {
+            arrayx.add(Enum.Pregunta.POR_GRUPO_AR);
+            arrayx.add(Enum.Pregunta.POR_GRUPO_RO);
+        }
+        if (periodo == 1) {
+            arrayx.add(Enum.Pregunta.POR_PERIODO);
+        }
+        if (clasificacion == 1) {
+            arrayx.add(Enum.Pregunta.POR_CLASIFICACION);
+        }
+        Random rand = new Random();
+        item.TipoPregunta = arrayx.get(rand.nextInt(arrayx.size()));
+        return item;
+    }
+    
+    public static ArrayList<Preguntas> DeterminarPreguntaMenu (int numPreguntas, int elemento, int simbolo, int grupo, int periodo, int clasificacion) {
+        ArrayList<Preguntas> item = new ArrayList<Preguntas>();
+        
+        for (int i = 0; i < numPreguntas; i++) {
+            item.add(DeterminarPreguntaMenu(elemento, simbolo, grupo, periodo, clasificacion));
+        }
+        return item;
+    }
+    
+    public static String ComprobarRespuesta (Elemento elemento, String ResUsuario, Enum.Pregunta TipoPregunta) {
+        String res = "";
+        String propiedad = "";
+        
+        switch (TipoPregunta) {
+            case POR_SIMBOLO:
+                propiedad = "" + elemento.getSimbolo();
+                if (ResUsuario.equalsIgnoreCase(propiedad)) {
+                    res = "La respuesta es correcta.";
+                } else {
+                    res = "La respuesta correcta es " + elemento.getSimbolo() + ".";
+                }
+                break;
+            case POR_PERIODO:
+                propiedad = "" + elemento.getPeriodo();
+                if (ResUsuario.equalsIgnoreCase(propiedad)) {
+                    res = "La respuesta es correcta.";
+                } else {
+                    res = "La respuesta correcta es " + elemento.getSimbolo() + ".";
+                }
+                break;
+            case POR_GRUPO_RO:
+                propiedad = "" + elemento.getGrupo();
+                if (ResUsuario.equalsIgnoreCase(propiedad)) {
+                    res = "La respuesta es correcta.";
+                } else {
+                    res = "La respuesta correcta es " + elemento.getSimbolo() + ".";
+                }
+                break;
+            case POR_GRUPO_AR:
+                propiedad = "" + elemento.getGrupo().getNumGrupo();
+                if (ResUsuario.equalsIgnoreCase(propiedad)) {
+                    res = "La respuesta es correcta.";
+                } else {
+                    res = "La respuesta correcta es " + elemento.getGrupo().getNumGrupo() + ".";
+                }
+                break;
+            case POR_CLASIFICACION:
+                propiedad = "" + elemento.getClasificacion();
+                if (ResUsuario.equalsIgnoreCase(propiedad)) {
+                    res = "La respuesta es correcta.";
+                } else {
+                    res = "La respuesta correcta es " + elemento.getClasificacion() + ".";
+                }
+                break;
+            case POR_PESOA:
+                propiedad = "" + elemento.getPesoA();
+                if (ResUsuario.equalsIgnoreCase(propiedad)) {
+                    res = "La respuesta es correcta.";
+                } else {
+                    res = "La respuesta correcta es " + elemento.getPesoA() + ".";
+                }
+                break;
+            case POR_ELECTRO:
+                propiedad = "" + elemento.getElectronegatividad();
+                if (ResUsuario.equalsIgnoreCase(propiedad)) {
+                    res = "La respuesta es correcta.";
+                } else {
+                    res = "La respuesta correcta es " + elemento.getElectronegatividad() + ".";
+                }
+                break;
+            default:
+                break;
+        }
+               
+        return res;
+    }
+    
+        
+    public static void Evaluacion(Ronda ronda) {
         int total = ronda.arrayPreguntas.size();
         int correctas = 0;
         for (int i = 0; i < ronda.arrayPreguntas.size(); i++) {
@@ -174,5 +285,15 @@ public class ElementosObj {
         }
     }
     
+    /*
+    public void GuardarUsuario(String nombreUsuario, String contraseña, int medallas_ORO, int medallas_PLATA, int medallas_BRONCE, String logros) throws FileNotFoundException, IOException {
+        Usuario user = new Usuario(nombreUsuario, contraseña, medallas_ORO, medallas_PLATA, medallas_BRONCE, logros);
+        arrayUsuarios.add(user);
+        FileOutputStream fos= new FileOutputStream("Usuarios.txt");
+        ObjectOutputStream oos= new ObjectOutputStream (fos);
+        oos.writeObject(arrayUsuarios);
+        System.out.println(arrayUsuarios.size());
+    }
+    */
     
 }
