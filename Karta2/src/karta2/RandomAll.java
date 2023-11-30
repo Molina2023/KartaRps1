@@ -16,7 +16,7 @@ public class RandomAll {
         ArrayList<Preguntas> array = new ArrayList<Preguntas>();
         ElementosObj obj = new ElementosObj();
         
-        array = obj.DeterminarPregunta(10);
+        array = obj.DeterminarPreguntaIniciar(10);
     }
     
     
