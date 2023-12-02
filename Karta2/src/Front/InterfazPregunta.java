@@ -18,6 +18,7 @@ public class InterfazPregunta extends javax.swing.JFrame {
     public static String ResUsuario;
     public static Elemento elemento;
     public static karta2.Enum.Pregunta TipoPregunta;
+    public static int i = 0;
     
     public InterfazPregunta() {
         initComponents();
@@ -160,8 +161,16 @@ public class InterfazPregunta extends javax.swing.JFrame {
             @Override
             public void keyPressed(KeyEvent e) {
                 if(e.getKeyCode() == KeyEvent.VK_ENTER){
+
                     ResUsuario = jTextField1.getText();
+                    System.out.println(ResUsuario);
+                    String elemento = item.get(i).getElementoJugando().getNombre();
+                    System.out.println(item.size());
+                    System.out.println(i);
+                    System.out.println(elemento);
+                    /*
                     lblResCheck.setText(karta2.ElementosObj.ComprobarRespuesta(elemento, ResUsuario, TipoPregunta));
+                    */
                     lblResCheck.setVisible(true);
                     lblBtnFacil.setVisible(true);
                     lblBtnMedio.setVisible(true);
@@ -272,9 +281,18 @@ public class InterfazPregunta extends javax.swing.JFrame {
     }//GEN-LAST:event_pnlBtnExitMouseExited
 
     private void lblBtnCheckMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblBtnCheckMouseClicked
+        i = i+1;
+        lblPregunta.setText(item.get(i).getTipoPregunta().getOracion());
+        if (i == item.size()-1) {
+            InterfazResultados obj = new InterfazResultados();
+            obj.setVisible(true);
+            this.setVisible(false);
+        }
+        /*
         InterfazResultados obj = new InterfazResultados();
         obj.setVisible(true);
         this.setVisible(false);
+        */
         // cuando le den click a le flechita rosita los va a mandar a la siguiente pregunta o a InterfazResultados
     }//GEN-LAST:event_lblBtnCheckMouseClicked
 
@@ -341,7 +359,7 @@ public class InterfazPregunta extends javax.swing.JFrame {
     }//GEN-LAST:event_formComponentShown
 
     private void lblPreguntaComponentShown(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_lblPreguntaComponentShown
-        lblPregunta.setText(item.get(0).getTipoPregunta().getOracion());
+        lblPregunta.setText(item.get(i).getTipoPregunta().getOracion());
         // TODO add your handling code here:
     }//GEN-LAST:event_lblPreguntaComponentShown
 
@@ -383,6 +401,7 @@ public class InterfazPregunta extends javax.swing.JFrame {
             public void run() {
                 new InterfazPregunta().setVisible(true);
                 item = ElementosObj.DeterminarPreguntaIniciar(10);
+                /*
                 for (int i = 0; i < item.size(); i++) {
                     lblPregunta.setText(item.get(i).getTipoPregunta().getOracion());
                     elemento = item.get(i).getElementoJugando();
@@ -390,6 +409,7 @@ public class InterfazPregunta extends javax.swing.JFrame {
                     System.out.println(item.get(i).getTipoPregunta());
                     
                 }
+*/
                 
             }
         });
