@@ -156,8 +156,8 @@ public class ElementosObj {
             item.add(DeterminarElementoIniciar());
             System.out.println(item.get(i).getElementoJugando());
             System.out.println("Simbolo atomico: " + item.get(i).getElementoJugando().getSimbolo());
-            System.out.println("Numero atomico: " + item.get(i).getElementoJugando().getNumA());
-            System.out.println(item.get(i).getTipoPregunta().getOracion());
+            System.out.println("Tipo de pregunta: " + item.get(i).getTipoPregunta());
+            System.out.println("iteracion: " + i);
         }
         return item;
     }
