@@ -1,24 +1,24 @@
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Enum.java to edit this template
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package karta2;
 
-public enum Pregunta {
-    POR_SIMBOLO(1),
-    POR_PERIODO(2),
-    POR_GRUPO(3),
-    POR_CLASIFICACION(4),
-    POR_PESOA(5),
-    POR_ELECTRO(6);
+public class Pregunta {
+    //Esta es la clase Pregunta, solo tiene dos propiedades:
+    //Solo se necesita de estas dos cosas para saber la pregunta, la respuesta, poder validarlo, etc
+    
+    Elemento ElementoEstudiado;
+    Enum.TipoPregunta TipoPregunta;
 
-    public int getNum() {
-        return num;
+    public Elemento getElementoJugando() {
+        return ElementoEstudiado;
+    }
+
+    public Enum.TipoPregunta getTipoPregunta() {
+        return TipoPregunta;
     }
     
-    Pregunta (int num) {
-        this.num = num;
-    }
-            
-    public int num;
+    
+    
 }

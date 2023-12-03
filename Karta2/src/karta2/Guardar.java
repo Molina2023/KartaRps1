@@ -7,6 +7,8 @@ package karta2;
 import java.sql.Connection;
 
 public class Guardar {
+    //No presten atención a esto, probablemente aquí dejaré los métodos para el archivo
+    //Solo es una prueba para hacerlo con bases de datos de SQL, pero es bastante complicado
     /*
     Pool GuardarGet = new Pool();
     

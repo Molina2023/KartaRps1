@@ -7,6 +7,7 @@ package karta2;
 import java.io.Serializable;
 
 public class Elemento implements Serializable{
+    //Aquí está la clase de los elementos, no tiene nada más que getters.
     int numA;
     String simbolo;
     String nombre;

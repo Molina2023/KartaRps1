@@ -9,6 +9,7 @@ package karta2;
  * @author nisit
  */
 public class Enum {
+    //Aquí están todos los enum: Periodo, Grupo, TipoPregunta, Medalla, Dificultad, Clasificacion
     public enum Periodo {
         PERIODO1,
         PERIODO2,
@@ -50,7 +51,7 @@ public class Enum {
         private int numGrupo;
     }
     
-    public enum Pregunta {
+    public enum TipoPregunta {
         POR_ELEMENTO("¿Cuál es el nombre del elemento cuyo símbolo es este?"),
         POR_SIMBOLO("¿Cuál es el simbolo de este elemento?"),
         POR_NUM_MASA("¿Cuál es el número de masa de este elemento?"),
@@ -66,7 +67,7 @@ public class Enum {
         public String getOracion() {
             return oracion;
         }
-        private Pregunta (String oracion) {
+        private TipoPregunta (String oracion) {
             this.oracion = oracion;
         }
         
@@ -80,7 +81,7 @@ public class Enum {
     }
     
     public enum Dificultad {
-        FACIL(10),
+        FACIL(0),
         MEDIO(5),
         DIFICIL(3);
         
@@ -95,5 +96,24 @@ public class Enum {
         private int repetir;
     }
     
+    public enum Clasificacion {
+        METAL("Metal"),
+        METALOIDE("Metaloide"),
+        NOMETAL("No metal"),
+        HALOGENOS("Halógeno"),
+        ACTINIDOS("Actínidos"),
+        LACTINIDOS("Lactínidos"),
+        GASES_NOBLES("Gas noble");
+        
+        private Clasificacion (String clasificacion) {
+            this.clasificacion = clasificacion;
+        }
+        
+        public String getClasificacion() {
+            return clasificacion;
+        }
+        
+        private String clasificacion;
+    }
     
 }

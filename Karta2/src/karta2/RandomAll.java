@@ -13,10 +13,10 @@ import java.util.ArrayList;
 public class RandomAll {
 
     public static void main(String[] args) {
-        ArrayList<Preguntas> array = new ArrayList<Preguntas>();
-        ElementosObj obj = new ElementosObj();
+        //No tienen que hacer caso de esta cosa, solo sirve por si quieren hacer pruebas
+        ArrayList<Pregunta> array = new ArrayList<Pregunta>();
+        TablaPeriodica obj = new TablaPeriodica();
         
-        array = obj.DeterminarPreguntaIniciar(10);
     }
     
     
